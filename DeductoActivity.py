@@ -167,7 +167,7 @@ class DeductoActivity(activity.Activity):
             self._correct = 0
             self.level = 0
             if not self._playing:
-                self._example_cb() 
+                self._example_cb()
             self._game.new_game()
             if self._initiating:
                 _logger.debug('sending new game and new grid')
