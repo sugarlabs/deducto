@@ -1,5 +1,11 @@
 NEWS
 
+7
+
+BUG FIX:
+* Initialize _python_code to None in case where loading
+  levels is aborted (Alan Jhonn Aguiar Schwyn)
+
 6
 
 ENHANCEMENT:
