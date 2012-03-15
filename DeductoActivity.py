@@ -260,7 +260,7 @@ class DeductoActivity(activity.Activity):
             self._false_button.set_tooltip(
                 _('Show a pattern that does not match the rule.'))
             self.status.set_label(
-                _('Explore patterns with the ☑ and ☒ buttons'))
+                _('Explore patterns with the %s and %s buttons.') % ('☑', '☒'))
             self._playing = False
         else:
             self._example_button.set_icon('example')
