@@ -322,7 +322,6 @@ class Game():
         self._scale = self._width / (10 * DOT_SIZE * 1.2)
         self._dot_size = int(DOT_SIZE * self._scale)
         self._space = int(self._dot_size / 5.)
-        self.we_are_sharing = False
         self.max_levels = len(LEVELS_TRUE)
         self.this_pattern = False
 
@@ -352,23 +351,17 @@ class Game():
                 self._dots[-1].set_label_attributes(40)
                 i += 1
 
-        # and initialize a few variables we'll need.
-        self._all_clear()
-
-    def _all_clear(self):
-        ''' Things to reinitialize when starting up a new game. '''
-        self.show_random()
-
-    def show_true(self):
-        dot_list = self._generate_pattern(LEVELS_TRUE[self._activity.level])
+    def show(self, dot_list):
         for i in range(GRID * GRID):
             self._dots[i].set_shape(self._new_dot(self._colors[dot_list[i]]))
+            self._dots[i].type = dot_list[i]
+
+    def show_true(self):
+        self.show(self._generate_pattern(LEVELS_TRUE[self._activity.level]))
         self.this_pattern = True
 
     def show_false(self):
-        dot_list = self._generate_pattern(LEVELS_FALSE[self._activity.level])
-        for i in range(GRID * GRID):
-            self._dots[i].set_shape(self._new_dot(self._colors[dot_list[i]]))
+        self.show(self._generate_pattern(LEVELS_FALSE[self._activity.level]))
         self.this_pattern = False
 
     def show_random(self):
@@ -383,16 +376,19 @@ class Game():
 
     def new_game(self):
         ''' Start a new game. '''
+        self.show_random()
 
-        self._all_clear()
+    def restore_grid(self, dot_list, boolean):
+        ''' Restore a grid from the share '''
+        self.show(dot_list)
+        self.this_pattern = boolean
 
-        if self.we_are_sharing:
-            _logger.debug('sending a new game')
-            self._parent.send_new_game()
-
-    def set_sharing(self, share=True):
-        _logger.debug('enabling sharing')
-        self.we_are_sharing = share
+    def save_grid(self):
+        ''' Return dot list for sharing '''
+        dot_list = []
+        for dot in self._dots:
+            dot_list.append(dot.type)
+        return(dot_list, self.this_pattern)
 
     def _grid_to_dot(self, pos):
         ''' calculate the dot index from a column and row in the grid '''

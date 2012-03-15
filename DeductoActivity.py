@@ -65,10 +65,10 @@ class DeductoActivity(activity.Activity):
         else:
             self.colors = ['#A0FFA0', '#FF8080']
 
-        self.playing = True
         self.level = 0
-        self.correct = 0
-        self.game_over = False
+        self._correct = 0
+        self._playing = True
+        self._game_over = False
 
         self._setup_toolbars(_have_toolbox)
         self._setup_dispatch_table()
@@ -82,6 +82,9 @@ class DeductoActivity(activity.Activity):
         self.show_all()
 
         self._game = Game(canvas, parent=self, colors=self.colors)
+
+        self._sharing = False
+        self._initiating = False
         self._setup_presence_service()
 
         if 'level' in self.metadata:
@@ -94,7 +97,7 @@ class DeductoActivity(activity.Activity):
     def _setup_toolbars(self, have_toolbox):
         """ Setup the toolbars. """
 
-        self.max_participants = 0
+        self.max_participants = 4
 
         if have_toolbox:
             toolbox = ToolbarBox()
@@ -159,68 +162,97 @@ class DeductoActivity(activity.Activity):
 
     def _new_game_cb(self, button=None):
         ''' Start a new game. '''
-        self.game_over = False
-        self.correct = 0
-        self.level = 0
-        self._game.new_game()
+        if (not self._sharing) or self._initiating:
+            self._game_over = False
+            self._correct = 0
+            self.level = 0
+            if not self._playing:
+                self._example_cb() 
+            self._game.new_game()
+            if self._initiating:
+                _logger.debug('sending new game and new grid')
+                self._send_new_game()
+                self._send_new_grid()
+            self.status.set_label(_('Playing level %s') % (self.level + 1))
+        else:
+            self.status.set_label(_('Only sharer can start a new game.'))
 
     def _test_for_game_over(self):
         ''' If we are at maximum levels, the game is over '''
         if self.level == self._game.max_levels:
-            self.status.set_label(_('Game over.'))
             self.level = 0
-            self.game_over = True
+            self._game_over = True
+            self.status.set_label(_('Game over.'))
         else:
             self.status.set_label(_('Playing level %d') % (self.level + 1))
-            self.correct = 0
-            self._game.show_random()
+            self._correct = 0
+            if (not self._sharing) or self._initiating:
+                self._game.show_random()
+                if self._initiating:
+                    self._send_new_grid()
 
     def _true_cb(self, button=None):
         ''' Declare pattern true or show an example of a true pattern. '''
-        if self.game_over:
-            self.status.set_label(_('Click on new game button to begin.'))
+        if self._game_over:
+            if (not self._sharing) or self._initiating:
+                self.status.set_label(_('Click on new game button to begin.'))
+            else:
+                self.status.set_label(_('Wait for sharer to start a new game.'))
             return
-        if self.playing:
+        if self._playing:
             if self._game.this_pattern:
-                self.correct += 1
-                if self.correct == 5:
+                self._correct += 1
+                if self._correct == 5:
                     self.level += 1
                     self._test_for_game_over()
                     self.metadata['level'] = str(self.level)
                 else:
                     self.status.set_label(
-                        _('%d correct answers.') % (self.correct))
-                    self._game.show_random()
+                        _('%d correct answers.') % (self._correct))
+                    if (not self._sharing) or self._initiating:
+                        self._game.show_random()
+                        if self._initiating:
+                            self._send_new_grid()
             else:
                 self.status.set_label(_('Pattern was false.'))
-                self.correct = 0
+                self._correct = 0
+            if (button is not None) and self._sharing:
+                self._send_true_button_click()
         else:
             self._game.show_true()
 
     def _false_cb(self, button=None):
         ''' Declare pattern false or show an example of a false pattern. '''
-        if self.game_over:
-            self.status.set_label(_('Click on new game button to begin.'))
+        if self._game_over:
+            if (not self._sharing) or self._initiating:
+                self.status.set_label(_('Click on new game button to begin.'))
+            else:
+                self.status.set_label(_('Wait for sharer to start a new game.'))
             return
-        if self.playing:
+        if self._playing:
             if not self._game.this_pattern:
-                self.correct += 1
-                if self.correct == 5:
+                self._correct += 1
+                if self._correct == 5:
                     self.level += 1
                     self._test_for_game_over()
                 else:
                     self.status.set_label(
-                        _('%d correct answers.') % (self.correct))
-                    self._game.show_random()
+                        _('%d correct answers.') % (self._correct))
+                    if (not self._sharing) or self._initiating:
+                        self._game.show_random()
+                        if self._initiating:
+                            self._send_new_grid()
             else:
                 self.status.set_label(_('Pattern was true.'))
-                self.correct = 0
+                self._correct = 0
+            if (button is not None) and self._sharing:
+                self._send_false_button_click()
         else:
             self._game.show_false()
 
     def _example_cb(self, button=None):
         ''' Show examples or resume play of current level. '''
-        if self.playing:
+        if self._playing:
             self._example_button.set_icon('resume-play')
             self._example_button.set_tooltip(_('Resume play'))
             self._true_button.set_tooltip(
@@ -229,7 +261,7 @@ class DeductoActivity(activity.Activity):
                 _('Show a pattern that does not match the rule.'))
             self.status.set_label(
                 _('Explore patterns with the ☑ and ☒ buttons'))
-            self.playing = False
+            self._playing = False
         else:
             self._example_button.set_icon('example')
             self._example_button.set_tooltip(_('Explore some examples.'))
@@ -237,9 +269,9 @@ class DeductoActivity(activity.Activity):
                 _('The pattern matches the rule.'))
             self._false_button.set_tooltip(
                 _('The pattern does not match the rule.'))
-            self.status.set_label(_('playing level %s') % (self.level))
-            self.playing = True
-            self.correct = 0
+            self.status.set_label(_('Playing level %s') % (self.level + 1))
+            self._playing = True
+            self._correct = 0
 
     def _gear_cb(self, button=None):
         ''' Load a custom level. '''
@@ -294,10 +326,13 @@ class DeductoActivity(activity.Activity):
 
     # Collaboration-related methods
 
+    # The sharer sends patterns and everyone shares whatever vote is
+    # cast first among all the sharer and joiners.
+
     def _setup_presence_service(self):
         ''' Setup the Presence Service. '''
         self.pservice = presenceservice.get_instance()
-        self.initiating = None  # sharing (True) or joining (False)
+        self._initiating = None  # sharing (True) or joining (False)
 
         owner = self.pservice.get_owner()
         self.owner = owner
@@ -320,8 +355,8 @@ class DeductoActivity(activity.Activity):
                 _shared_activity is null in _shared_cb()")
             return
 
-        self.initiating = sharer
-        self.waiting_for_hand = not sharer
+        self._initiating = sharer
+        self._sharing = True
 
         self.conn = self._shared_activity.telepathy_conn
         self.tubes_chan = self._shared_activity.telepathy_tubes_chan
@@ -339,7 +374,6 @@ class DeductoActivity(activity.Activity):
             self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
                 reply_handler=self._list_tubes_reply_cb,
                 error_handler=self._list_tubes_error_cb)
-        self._game.set_sharing(True)
 
     def _list_tubes_reply_cb(self, tubes):
         ''' Reply to a list request. '''
@@ -364,17 +398,19 @@ params=%r state=%d' % (id, initiator, type, service, params, state))
                 self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES], id, \
                 group_iface=self.text_chan[telepathy.CHANNEL_INTERFACE_GROUP])
 
-            self.chattube = ChatTube(tube_conn, self.initiating, \
-                self.event_received_cb)
+            self.chattube = ChatTube(tube_conn, self._initiating, \
+                self._event_received_cb)
 
     def _setup_dispatch_table(self):
         ''' Associate tokens with commands. '''
         self._processing_methods = {
-            'n': [self._receive_new_game, 'get a new game grid'],
-            'p': [self._receive_dot_click, 'get a dot click'],
+            'n': [self._receive_new_game, 'new game'],
+            'g': [self._receive_new_grid, 'get a new grid'],
+            't': [self._receive_true_button_click, 'get a true button press'],
+            'f': [self._receive_false_button_click, 'get a false button press'],
             }
 
-    def event_received_cb(self, event_message):
+    def _event_received_cb(self, event_message):
         ''' Data from a tube has arrived. '''
         if len(event_message) == 0:
             return
@@ -385,25 +421,47 @@ params=%r state=%d' % (id, initiator, type, service, params, state))
             return
         self._processing_methods[command][0](payload)
 
-    def send_new_game(self):
-        ''' Send a new grid to all players '''
-        self.send_event('n|%s' % (json_dump(self._game.save_game())))
+    def _send_new_game(self):
+        ''' Send a new game message to all players (only sharer sends grids) '''
+        self._send_event('n| ')
 
     def _receive_new_game(self, payload):
-        ''' Sharer can start a new game. '''
-        (dot_list, move_list) = json_load(payload)
-        self._game.restore_game(dot_list, move_list)
+        ''' Receive a new game notification from the sharer. '''
+        self._game_over = False
+        self._correct = 0
+        self.level = 0
+        if not self._playing:
+            self._example_cb()
+        self.status.set_label(_('Playing level %s') % (self.level + 1))
 
-    def send_dot_click(self, dot):
-        ''' Send a dot click to all the players '''
-        self.send_event('p|%s' % (json_dump(dot)))
+    def _send_new_grid(self):
+        ''' Send a new grid to all players (only sharer sends grids) '''
+        self._send_event('g|%s' % (json_dump(self._game.save_grid())))
 
-    def _receive_dot_click(self, payload):
-        ''' When a dot is clicked, everyone should change its color. '''
-        dot = json_load(payload)
-        self._game.remote_button_press(dot)
+    def _receive_new_grid(self, payload):
+        ''' Receive a grid from the sharer. '''
+        (dot_list, boolean) = json_load(payload)
+        self._game.restore_grid(dot_list, boolean)
 
-    def send_event(self, entry):
+    def _send_true_button_click(self):
+        ''' Send a true click to all the players '''
+        self._send_event('t|t')
+
+    def _receive_true_button_click(self, payload):
+        ''' When a button is clicked, everyone should react. '''
+        self._playing = True
+        self._true_cb()
+
+    def _send_false_button_click(self):
+        ''' Send a false click to all the players '''
+        self._send_event('f|f')
+
+    def _receive_false_button_click(self, payload):
+        ''' When a button is clicked, everyone should react. '''
+        self._playing = True
+        self._false_cb()
+
+    def _send_event(self, entry):
         ''' Send event through the tube. '''
         if hasattr(self, 'chattube') and self.chattube is not None:
             self.chattube.SendText(entry)
@@ -419,10 +477,10 @@ class ChatTube(ExportedGObject):
         self.stack_received_cb = stack_received_cb
         self.stack = ''
 
-        self.tube.add_signal_receiver(self.send_stack_cb, 'SendText', IFACE,
+        self.tube.add_signal_receiver(self._send_stack_cb, 'SendText', IFACE,
                                       path=PATH, sender_keyword='sender')
 
-    def send_stack_cb(self, text, sender=None):
+    def _send_stack_cb(self, text, sender=None):
         if sender == self.tube.get_unique_name():
             return
         self.stack = text
