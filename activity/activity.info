@@ -1,0 +1,8 @@
+[Activity]
+name = Deducto
+exec = sugar-activity DeductoActivity.DeductoActivity
+bundle_id = in.seeta.Deducto
+icon = activity-deducto
+activity_version = 5
+show_launcher = yes
+license=GPLv3
