@@ -173,7 +173,7 @@ class DeductoActivity(activity.Activity):
                 _logger.debug('sending new game and new grid')
                 self._send_new_game()
                 self._send_new_grid()
-            self.status.set_label(_('Playing level %s') % (self.level + 1))
+            self.status.set_label(_('Playing level %d') % (self.level + 1))
         else:
             self.status.set_label(_('Only sharer can start a new game.'))
 
@@ -269,7 +269,7 @@ class DeductoActivity(activity.Activity):
                 _('The pattern matches the rule.'))
             self._false_button.set_tooltip(
                 _('The pattern does not match the rule.'))
-            self.status.set_label(_('Playing level %s') % (self.level + 1))
+            self.status.set_label(_('Playing level %d') % (self.level + 1))
             self._playing = True
             self._correct = 0
 
@@ -432,7 +432,7 @@ params=%r state=%d' % (id, initiator, type, service, params, state))
         self.level = 0
         if not self._playing:
             self._example_cb()
-        self.status.set_label(_('Playing level %s') % (self.level + 1))
+        self.status.set_label(_('Playing level %d') % (self.level + 1))
 
     def _send_new_grid(self):
         ''' Send a new grid to all players (only sharer sends grids) '''
