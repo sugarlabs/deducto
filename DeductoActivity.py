@@ -70,6 +70,8 @@ class DeductoActivity(activity.Activity):
         self._playing = True
         self._game_over = False
 
+        self._python_code = None
+
         self._setup_toolbars(_have_toolbox)
         self._setup_dispatch_table()
 
@@ -294,7 +296,6 @@ class DeductoActivity(activity.Activity):
 
     def _load_python_code_from_journal(self, dsobject):
         ''' Read the Python code from the Journal object '''
-
         self._python_code = None
         try:
             _logger.debug("opening %s " % dsobject.file_path)
