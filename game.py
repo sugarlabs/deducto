@@ -308,7 +308,6 @@ class Game():
         self._activity = parent
         self._colors = [colors[0]]
         self._colors.append(colors[1])
-        self._dot_cache = {}
 
         self._canvas = canvas
         if parent is not None:
@@ -444,6 +443,7 @@ class Game():
 
     def _new_dot(self, color):
         ''' generate a dot of a color color '''
+        self._dot_cache = {}
         if not color in self._dot_cache:
             self._stroke = color
             self._fill = color
