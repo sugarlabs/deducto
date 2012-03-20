@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-15 15:31-0400\n"
+"PO-Revision-Date: 2012-03-20 07:55+0200\n"
+"Last-Translator: Meechai <malaku38@hotmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: activity/activity.info:2
+msgid "Deducto"
+msgstr "Deducto"
+
+#: DeductoActivity.py:92
+#, python-format
+msgid "Resuming level %d"
+msgstr "เล่นต่อระดับ %d"
+
+#: DeductoActivity.py:120
+msgid "Game"
+msgstr "เกม"
+
+#: DeductoActivity.py:127
+msgid "Start a new game."
+msgstr "เริ่มเกมใหม่"
+
+#: DeductoActivity.py:134 DeductoActivity.py:269
+msgid "The pattern matches the rule."
+msgstr "รูปแบบตรงกับกฎ"
+
+#: DeductoActivity.py:138 DeductoActivity.py:271
+msgid "The pattern does not match the rule."
+msgstr "รูปแบบไม่ตรงกับกฎ"
+
+#: DeductoActivity.py:145 DeductoActivity.py:267
+msgid "Explore some examples."
+msgstr "สำรวจตัวอย่างบางส่วน"
+
+#: DeductoActivity.py:155
+msgid "Load a custom level."
+msgstr "โหลดระดับที่กำหนดเอง"
+
+#: DeductoActivity.py:176 DeductoActivity.py:187 DeductoActivity.py:272
+#: DeductoActivity.py:435
+#, python-format
+msgid "Playing level %d"
+msgstr "กำลังเล่นระดับ %d"
+
+#: DeductoActivity.py:178
+msgid "Only sharer can start a new game."
+msgstr "เฉพาะผู้แบ่งปันสามารถเริ่มเกมใหม่"
+
+#: DeductoActivity.py:185
+msgid "Game over."
+msgstr "จบเกม"
+
+#: DeductoActivity.py:198 DeductoActivity.py:228
+msgid "Click on new game button to begin."
+msgstr "คลิกที่ปุ่มเกมใหม่เพื่อเริ่มต้น"
+
+#: DeductoActivity.py:200 DeductoActivity.py:230
+msgid "Wait for sharer to start a new game."
+msgstr "รอผู้แบ่งปันเพื่อเริ่มเกมใหม่"
+
+#: DeductoActivity.py:211 DeductoActivity.py:240
+#, python-format
+msgid "%d correct answers."
+msgstr "%d คำตอบถูกต้อง"
+
+#: DeductoActivity.py:217
+msgid "Pattern was false."
+msgstr "รูปแบบเป็นเท็จ"
+
+#: DeductoActivity.py:246
+msgid "Pattern was true."
+msgstr "รูปแบบเป็นจริง"
+
+#: DeductoActivity.py:257
+msgid "Resume play"
+msgstr "เล่นต่อ"
+
+#: DeductoActivity.py:259
+msgid "Show a pattern that matches the rule."
+msgstr "แสดงรูปแบบที่ตรงกับกฎ"
+
+#: DeductoActivity.py:261
+msgid "Show a pattern that does not match the rule."
+msgstr "แสดงรูปแบบที่ไม่ตรงกับกฎ"
+
+#: DeductoActivity.py:263
+#, python-format
+msgid "Explore patterns with the %s and %s buttons."
+msgstr "สำรวจรูปแบบด้วยปุ่ม %s และ %s"
+
+#: DeductoActivity.py:279
+msgid "Load a \"True\" pattern generator from the journal"
+msgstr "โหลดรูปแบบ \"จริง\" จากบันทึกประจำวัน"
+
+#: DeductoActivity.py:286
+msgid "Load a \"False\" pattern generator from the journal"
+msgstr "โหลดรูปแบบ \"เท็จ\" จากบันทึกประจำวัน"
+
+#: DeductoActivity.py:292
+msgid "New level added"
+msgstr "ระดับใหม่ถูกเพิ่ม"
