@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-15 15:31-0400\n"
-"PO-Revision-Date: 2012-03-16 09:12+0200\n"
+"PO-Revision-Date: 2012-03-17 06:45+0200\n"
 "Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: es\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,12 +19,12 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "Deducto"
-msgstr ""
+msgstr "Deducción"
 
 #: DeductoActivity.py:92
 #, python-format
 msgid "Resuming level %d"
-msgstr ""
+msgstr "Reanudando nivel %d"
 
 #: DeductoActivity.py:120
 msgid "Game"
@@ -36,11 +36,11 @@ msgstr "Comenzar nuevo juego."
 
 #: DeductoActivity.py:134 DeductoActivity.py:269
 msgid "The pattern matches the rule."
-msgstr ""
+msgstr "El patrón coincide con la regla."
 
 #: DeductoActivity.py:138 DeductoActivity.py:271
 msgid "The pattern does not match the rule."
-msgstr ""
+msgstr "El patrón no coincide con la regla."
 
 #: DeductoActivity.py:145 DeductoActivity.py:267
 msgid "Explore some examples."
@@ -48,68 +48,68 @@ msgstr "Explorar varios ejemplos."
 
 #: DeductoActivity.py:155
 msgid "Load a custom level."
-msgstr ""
+msgstr "Cargar un nivel personalizado."
 
 #: DeductoActivity.py:176 DeductoActivity.py:187 DeductoActivity.py:272
 #: DeductoActivity.py:435
 #, python-format
 msgid "Playing level %d"
-msgstr ""
+msgstr "Jugando nivel %d"
 
 #: DeductoActivity.py:178
 msgid "Only sharer can start a new game."
-msgstr ""
+msgstr "Solo el que compartió la actividad puede inciar un nuevo juego."
 
 #: DeductoActivity.py:185
 msgid "Game over."
-msgstr ""
+msgstr "Juego finalizado."
 
 #: DeductoActivity.py:198 DeductoActivity.py:228
 msgid "Click on new game button to begin."
-msgstr ""
+msgstr "Haz click en el botón Nuevo para empezar."
 
 #: DeductoActivity.py:200 DeductoActivity.py:230
 msgid "Wait for sharer to start a new game."
-msgstr ""
+msgstr "Espera al que compartió la actividad para empezar un nuevo juego."
 
 #: DeductoActivity.py:211 DeductoActivity.py:240
 #, python-format
 msgid "%d correct answers."
-msgstr ""
+msgstr "%d respuestas correctas."
 
 #: DeductoActivity.py:217
 msgid "Pattern was false."
-msgstr ""
+msgstr "El patrón era falso."
 
 #: DeductoActivity.py:246
 msgid "Pattern was true."
-msgstr ""
+msgstr "El patrón era verdadero."
 
 #: DeductoActivity.py:257
 msgid "Resume play"
-msgstr ""
+msgstr "Reanudar el juego"
 
 #: DeductoActivity.py:259
 msgid "Show a pattern that matches the rule."
-msgstr ""
+msgstr "Mostrar un patrón que coincida con la regla."
 
 #: DeductoActivity.py:261
 msgid "Show a pattern that does not match the rule."
-msgstr ""
+msgstr "Mostrar un patrón que no coincida con la regla."
 
 #: DeductoActivity.py:263
 #, python-format
 msgid "Explore patterns with the %s and %s buttons."
-msgstr ""
+msgstr "Explora patrones con los botones %s y %s."
 
 #: DeductoActivity.py:279
 msgid "Load a \"True\" pattern generator from the journal"
-msgstr ""
+msgstr "Cargar un generador de patrones \"Verdadero\" desde el diario"
 
 #: DeductoActivity.py:286
 msgid "Load a \"False\" pattern generator from the journal"
-msgstr ""
+msgstr "Cargar un generador de patrones \"Falso\" desde el diario"
 
 #: DeductoActivity.py:292
 msgid "New level added"
-msgstr ""
+msgstr "Nuevo nivel agregado"
