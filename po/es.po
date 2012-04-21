@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-15 15:31-0400\n"
-"PO-Revision-Date: 2012-03-17 06:45+0200\n"
-"Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
+"POT-Creation-Date: 2012-04-19 00:33-0400\n"
+"PO-Revision-Date: 2012-04-21 09:21+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,95 +21,95 @@ msgstr ""
 msgid "Deducto"
 msgstr "Deducción"
 
-#: DeductoActivity.py:92
+#: DeductoActivity.py:94
 #, python-format
 msgid "Resuming level %d"
 msgstr "Reanudando nivel %d"
 
-#: DeductoActivity.py:120
+#: DeductoActivity.py:122
 msgid "Game"
 msgstr "Juego"
 
-#: DeductoActivity.py:127
+#: DeductoActivity.py:129
 msgid "Start a new game."
 msgstr "Comenzar nuevo juego."
 
-#: DeductoActivity.py:134 DeductoActivity.py:269
+#: DeductoActivity.py:136 DeductoActivity.py:272
 msgid "The pattern matches the rule."
 msgstr "El patrón coincide con la regla."
 
-#: DeductoActivity.py:138 DeductoActivity.py:271
+#: DeductoActivity.py:140 DeductoActivity.py:274
 msgid "The pattern does not match the rule."
 msgstr "El patrón no coincide con la regla."
 
-#: DeductoActivity.py:145 DeductoActivity.py:267
+#: DeductoActivity.py:147 DeductoActivity.py:270
 msgid "Explore some examples."
 msgstr "Explorar varios ejemplos."
 
-#: DeductoActivity.py:155
+#: DeductoActivity.py:157
 msgid "Load a custom level."
 msgstr "Cargar un nivel personalizado."
 
-#: DeductoActivity.py:176 DeductoActivity.py:187 DeductoActivity.py:272
-#: DeductoActivity.py:435
+#: DeductoActivity.py:178 DeductoActivity.py:189 DeductoActivity.py:275
+#: DeductoActivity.py:437
 #, python-format
 msgid "Playing level %d"
 msgstr "Jugando nivel %d"
 
-#: DeductoActivity.py:178
+#: DeductoActivity.py:180
 msgid "Only sharer can start a new game."
 msgstr "Solo el que compartió la actividad puede inciar un nuevo juego."
 
-#: DeductoActivity.py:185
+#: DeductoActivity.py:187
 msgid "Game over."
 msgstr "Juego finalizado."
 
-#: DeductoActivity.py:198 DeductoActivity.py:228
+#: DeductoActivity.py:200 DeductoActivity.py:230
 msgid "Click on new game button to begin."
 msgstr "Haz click en el botón Nuevo para empezar."
 
-#: DeductoActivity.py:200 DeductoActivity.py:230
+#: DeductoActivity.py:202 DeductoActivity.py:232
 msgid "Wait for sharer to start a new game."
 msgstr "Espera al que compartió la actividad para empezar un nuevo juego."
 
-#: DeductoActivity.py:211 DeductoActivity.py:240
+#: DeductoActivity.py:213 DeductoActivity.py:242
 #, python-format
 msgid "%d correct answers."
 msgstr "%d respuestas correctas."
 
-#: DeductoActivity.py:217
+#: DeductoActivity.py:219
 msgid "Pattern was false."
 msgstr "El patrón era falso."
 
-#: DeductoActivity.py:246
+#: DeductoActivity.py:248
 msgid "Pattern was true."
 msgstr "El patrón era verdadero."
 
-#: DeductoActivity.py:257
+#: DeductoActivity.py:259
 msgid "Resume play"
 msgstr "Reanudar el juego"
 
-#: DeductoActivity.py:259
+#: DeductoActivity.py:261
 msgid "Show a pattern that matches the rule."
 msgstr "Mostrar un patrón que coincida con la regla."
 
-#: DeductoActivity.py:261
+#: DeductoActivity.py:263
 msgid "Show a pattern that does not match the rule."
 msgstr "Mostrar un patrón que no coincida con la regla."
 
-#: DeductoActivity.py:263
-#, python-format
-msgid "Explore patterns with the %s and %s buttons."
-msgstr "Explora patrones con los botones %s y %s."
+#: DeductoActivity.py:265
+#, python-format, 
+msgid "Explore patterns with the %(1)s and %(2)s buttons."
+msgstr "Explora patrones con los botones %(1)s y %(2)s"
 
-#: DeductoActivity.py:279
+#: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
 msgstr "Cargar un generador de patrones \"Verdadero\" desde el diario"
 
-#: DeductoActivity.py:286
+#: DeductoActivity.py:289
 msgid "Load a \"False\" pattern generator from the journal"
 msgstr "Cargar un generador de patrones \"Falso\" desde el diario"
 
-#: DeductoActivity.py:292
+#: DeductoActivity.py:295
 msgid "New level added"
 msgstr "Nuevo nivel agregado"
