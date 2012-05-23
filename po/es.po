@@ -98,7 +98,8 @@ msgid "Show a pattern that does not match the rule."
 msgstr "Mostrar un patrón que no coincida con la regla."
 
 #: DeductoActivity.py:265
-#, python-format, 
+#, python-format
+#, python-format,
 msgid "Explore patterns with the %(1)s and %(2)s buttons."
 msgstr "Explora patrones con los botones %(1)s y %(2)s"
 
