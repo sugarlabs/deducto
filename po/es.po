@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: 2012-04-21 09:21+0200\n"
+"PO-Revision-Date: 2012-10-07 22:25+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -101,7 +101,7 @@ msgstr "Mostrar un patrón que no coincida con la regla."
 #, python-format
 #, python-format,
 msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Explora patrones con los botones %(1)s y %(2)s"
+msgstr "Explora patrones con los botones %(1)s y %(2)s."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
