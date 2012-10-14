@@ -99,7 +99,7 @@ msgstr "แสดงรูปแบบที่ไม่ตรงกับกฎ
 
 #: DeductoActivity.py:265
 #, python-format
-#, python-format, 
+#, python-format,
 msgid "Explore patterns with the %(1)s and %(2)s buttons."
 msgstr "สำรวจรูปแบบด้วยปุ่ม %(1)s และ %(2)s"
 
