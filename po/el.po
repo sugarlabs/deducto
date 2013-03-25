@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: 2012-09-09 10:00+0200\n"
-"Last-Translator: Yannis <kiolalis@gmail.com>\n"
+"PO-Revision-Date: 2013-03-25 04:14+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr "Περιμένετε μέχρις ότου ο διαμοιραστής �
 #: DeductoActivity.py:213 DeductoActivity.py:242
 #, python-format
 msgid "%d correct answers."
-msgstr " %d σωστές απαντήσεις"
+msgstr "%d σωστές απαντήσεις"
 
 #: DeductoActivity.py:219
 msgid "Pattern was false."
@@ -100,7 +100,7 @@ msgstr "Εμφάνιση μοτίβου που δεν ταιριάζει με τ
 #: DeductoActivity.py:265
 #, python-format
 msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Εξερεύνηση μοτίβων με τα πλήκτρα %(1)s και %(2)s "
+msgstr "Εξερεύνηση μοτίβων με τα πλήκτρα %(1)s και %(2)s"
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
