@@ -2,113 +2,116 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-04-20 21:25+0000\n"
+"Last-Translator: Anna <leonteva.anna.e@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1461187548.000000\n"
 
 #: activity/activity.info:2
 msgid "Deducto"
-msgstr ""
+msgstr "Deducto"
 
 #: DeductoActivity.py:94
 #, python-format
 msgid "Resuming level %d"
-msgstr ""
+msgstr "Продолжаем уровень %d"
 
 #: DeductoActivity.py:122
 msgid "Game"
-msgstr ""
+msgstr "Игра"
 
 #: DeductoActivity.py:129
 msgid "Start a new game."
-msgstr ""
+msgstr "Начать новую игру."
 
 #: DeductoActivity.py:136 DeductoActivity.py:272
 msgid "The pattern matches the rule."
-msgstr ""
+msgstr "Образец соответствует правилу."
 
 #: DeductoActivity.py:140 DeductoActivity.py:274
 msgid "The pattern does not match the rule."
-msgstr ""
+msgstr "Образец не соответствует правилу."
 
 #: DeductoActivity.py:147 DeductoActivity.py:270
 msgid "Explore some examples."
-msgstr ""
+msgstr "Просмотреть несколько примеров."
 
 #: DeductoActivity.py:157
 msgid "Load a custom level."
-msgstr ""
+msgstr "Загрузить свой уровень."
 
 #: DeductoActivity.py:178 DeductoActivity.py:189 DeductoActivity.py:275
 #: DeductoActivity.py:437
 #, python-format
 msgid "Playing level %d"
-msgstr ""
+msgstr "Играем на уровне %d"
 
 #: DeductoActivity.py:180
 msgid "Only sharer can start a new game."
-msgstr ""
+msgstr "Начать игру можно только групповому участнику."
 
 #: DeductoActivity.py:187
 msgid "Game over."
-msgstr ""
+msgstr "Конец игры."
 
 #: DeductoActivity.py:200 DeductoActivity.py:230
 msgid "Click on new game button to begin."
-msgstr ""
+msgstr "Кликните на кнопке \"Новая игра\", чтобы приступить."
 
 #: DeductoActivity.py:202 DeductoActivity.py:232
 msgid "Wait for sharer to start a new game."
-msgstr ""
+msgstr "Ждите другого игрока для начала новой игры."
 
 #: DeductoActivity.py:213 DeductoActivity.py:242
 #, python-format
 msgid "%d correct answers."
-msgstr ""
+msgstr "%d правильных ответов."
 
 #: DeductoActivity.py:219
 msgid "Pattern was false."
-msgstr ""
+msgstr "Образец был неправильным."
 
 #: DeductoActivity.py:248
 msgid "Pattern was true."
-msgstr ""
+msgstr "Образец был правильным."
 
 #: DeductoActivity.py:259
 msgid "Resume play"
-msgstr ""
+msgstr "Продолжить игру"
 
 #: DeductoActivity.py:261
 msgid "Show a pattern that matches the rule."
-msgstr ""
+msgstr "Показать образец, соответствующий правилу."
 
 #: DeductoActivity.py:263
 msgid "Show a pattern that does not match the rule."
-msgstr ""
+msgstr "Показать образец, не соответствующий правилу."
 
 #: DeductoActivity.py:265
 #, python-format
 msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr ""
+msgstr "Просмотреть образцы с %(1)s и %(2)s кнопками."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
-msgstr ""
+msgstr "Загрузить генератор \"правильных\" образцов из журнала"
 
 #: DeductoActivity.py:289
 msgid "Load a \"False\" pattern generator from the journal"
-msgstr ""
+msgstr "Загрузить генератор \"неправильных\" образцов из журнала"
 
 #: DeductoActivity.py:295
 msgid "New level added"
-msgstr ""
+msgstr "Новый уровень добавлен"

@@ -2,66 +2,68 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-05-16 16:43+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: gn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1463417018.000000\n"
 
 #: activity/activity.info:2
 msgid "Deducto"
-msgstr ""
+msgstr "Oñeimo'ava"
 
 #: DeductoActivity.py:94
 #, python-format
 msgid "Resuming level %d"
-msgstr ""
+msgstr "Jejapojei yvatekue %d"
 
 #: DeductoActivity.py:122
 msgid "Game"
-msgstr ""
+msgstr "ñembosarái"
 
 #: DeductoActivity.py:129
 msgid "Start a new game."
-msgstr ""
+msgstr "ñepuru ñembosarai pyahu."
 
 #: DeductoActivity.py:136 DeductoActivity.py:272
 msgid "The pattern matches the rule."
-msgstr ""
+msgstr "Rejapova ojoja tekondive."
 
 #: DeductoActivity.py:140 DeductoActivity.py:274
 msgid "The pattern does not match the rule."
-msgstr ""
+msgstr "Rejapova ndojojai tekondie."
 
 #: DeductoActivity.py:147 DeductoActivity.py:270
 msgid "Explore some examples."
-msgstr ""
+msgstr "﻿Jepovyvy ambue techapyrakuéra."
 
 #: DeductoActivity.py:157
 msgid "Load a custom level."
-msgstr ""
+msgstr "Jehupi peteĩ yvatekue aipotahaicha."
 
 #: DeductoActivity.py:178 DeductoActivity.py:189 DeductoActivity.py:275
 #: DeductoActivity.py:437
 #, python-format
 msgid "Playing level %d"
-msgstr ""
+msgstr "Añembosarai yvatekue %d"
 
 #: DeductoActivity.py:180
 msgid "Only sharer can start a new game."
-msgstr ""
+msgstr "Omboja'ovante rembiaponde ikatu oñepyru peteĩ ñembosarai."
 
 #: DeductoActivity.py:187
 msgid "Game over."
-msgstr ""
+msgstr "Opa oñembosarai."
 
 #: DeductoActivity.py:200 DeductoActivity.py:230
 msgid "Click on new game button to begin."
