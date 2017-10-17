@@ -7,15 +7,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: 2013-04-24 13:55+0200\n"
-"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
+"PO-Revision-Date: 2017-10-15 16:47+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ayc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1508086061.000000\n"
 
 #: activity/activity.info:2
 msgid "Deducto"
@@ -28,27 +29,27 @@ msgstr "Mayampi qalltaski %d"
 
 #: DeductoActivity.py:122
 msgid "Game"
-msgstr "anatäwi"
+msgstr "Anatäwi"
 
 #: DeductoActivity.py:129
 msgid "Start a new game."
-msgstr "Machaqa anatäwi qalltaña"
+msgstr "Machaqa anatäwi qalltaña."
 
 #: DeductoActivity.py:136 DeductoActivity.py:272
 msgid "The pattern matches the rule."
-msgstr "tunuxa chiqampi chiqt'iwa"
+msgstr "Tunuxa chiqampi chiqt'iwa."
 
 #: DeductoActivity.py:140 DeductoActivity.py:274
 msgid "The pattern does not match the rule."
-msgstr "tunuxa janiwa chiqampi chiqt'iwa"
+msgstr "Tunuxa janiwa chiqampi chiqt'iwa."
 
 #: DeductoActivity.py:147 DeductoActivity.py:270
 msgid "Explore some examples."
-msgstr "Walja yant'äwinaka uñakipaña"
+msgstr "Walja yant'äwinaka uñakipaña."
 
 #: DeductoActivity.py:157
 msgid "Load a custom level."
-msgstr "Maya wakisiri siqi apxataña"
+msgstr "Maya wakisiri siqi apxataña."
 
 #: DeductoActivity.py:178 DeductoActivity.py:189 DeductoActivity.py:275
 #: DeductoActivity.py:437
@@ -66,7 +67,7 @@ msgstr "Anatäwi tukuyata."
 
 #: DeductoActivity.py:200 DeductoActivity.py:230
 msgid "Click on new game button to begin."
-msgstr "qalltañataki machaqa click limt'añaru limt'ma."
+msgstr "Qalltañataki machaqa click limt'añaru limt'ma."
 
 #: DeductoActivity.py:202 DeductoActivity.py:232
 msgid "Wait for sharer to start a new game."
@@ -104,11 +105,11 @@ msgstr "Tunu amuyunaka limt'asa uñarma %(1)s y %(2)s."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
-msgstr "\"Chiqapa\" tunu amuyunaka sapüru luräwina uñstayiri yapxataña."
+msgstr "\"Chiqapa\" tunu amuyunaka sapüru luräwina uñstayiri yapxataña"
 
 #: DeductoActivity.py:289
 msgid "Load a \"False\" pattern generator from the journal"
-msgstr "\"Jani Chiqapa\" tunu amuyunaka sapüru luräwina uñstayiri yapxataña."
+msgstr "\"Jani Chiqapa\" tunu amuyunaka sapüru luräwina uñstayiri yapxataña"
 
 #: DeductoActivity.py:295
 msgid "New level added"

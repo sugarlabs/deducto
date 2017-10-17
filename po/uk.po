@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: 2015-10-29 22:32+0000\n"
-"Last-Translator: lxlalexlxl <pilipchukap@rambler.ru>\n"
+"PO-Revision-Date: 2017-04-15 17:47+0000\n"
+"Last-Translator: yurchor <yurchor@ukr.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1446157953.000000\n"
+"X-POOTLE-MTIME: 1492278420.000000\n"
 
 #: activity/activity.info:2
 msgid "Deducto"
@@ -37,12 +37,10 @@ msgid "Start a new game."
 msgstr "Почати нову гру."
 
 #: DeductoActivity.py:136 DeductoActivity.py:272
-#, fuzzy
 msgid "The pattern matches the rule."
 msgstr "Розкладка відповідає правилу."
 
 #: DeductoActivity.py:140 DeductoActivity.py:274
-#, fuzzy
 msgid "The pattern does not match the rule."
 msgstr "Розкладка не відповідає правилу."
 
@@ -82,9 +80,8 @@ msgid "%d correct answers."
 msgstr "%d правильних відповідей."
 
 #: DeductoActivity.py:219
-#, fuzzy
 msgid "Pattern was false."
-msgstr "Розкладка була неправильна."
+msgstr "Розкладка була помилковою."
 
 #: DeductoActivity.py:248
 msgid "Pattern was true."
@@ -108,12 +105,10 @@ msgid "Explore patterns with the %(1)s and %(2)s buttons."
 msgstr "Дослідити розкладки з %(1)s і %(2)s кнопками."
 
 #: DeductoActivity.py:282
-#, fuzzy
 msgid "Load a \"True\" pattern generator from the journal"
 msgstr "Завантажити з журналу генератор правильних розкладок"
 
 #: DeductoActivity.py:289
-#, fuzzy
 msgid "Load a \"False\" pattern generator from the journal"
 msgstr "Завантажити з журналу генератор неправильних розкладок"
 
