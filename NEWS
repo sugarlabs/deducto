@@ -1,33 +1,33 @@
 NEWS
 
-10
-
-* New translations
-* Added repository to activity.info
-
 9
 
 ENHANCEMENT:
-* New translations
+
+* Ignacio Rodríguez port to gtk3
 
 8
 
 ENHANCEMENT:
+
 * New translations
 
 7
 
 BUG FIX:
+
 * Initialize _python_code to None in case where loading
+
   levels is aborted (Alan Jhonn Aguiar Schwyn)
 
 6
 
 ENHANCEMENT:
+
 * Sharing enabled
 
 5
 
 ENHANCEMENT:
-* Rewritten from scratch to be more Sugar-like.
 
+* Rewritten from scratch to be more Sugar-like.

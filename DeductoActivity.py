@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-#Copyright (c) 2012 Walter Bender
+# Copyright (c) 2012 Walter Bender
+# Ported to gtk3:
+# Ignacio Rodríguez <ignaciorodriguez@sugarlabs.org>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -11,20 +13,14 @@
 # Foundation, 51 Franklin Street, Suite 500 Boston, MA 02110-1335 USA
 
 
-import gtk
+from gi.repository import Gtk, Gdk
 
-from sugar.activity import activity
-from sugar import profile
-try:
-    from sugar.graphics.toolbarbox import ToolbarBox
-    _have_toolbox = True
-except ImportError:
-    _have_toolbox = False
-
-if _have_toolbox:
-    from sugar.activity.widgets import ActivityToolbarButton
-    from sugar.activity.widgets import StopButton
-from sugar.graphics.objectchooser import ObjectChooser
+from sugar3.activity import activity
+from sugar3 import profile
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.activity.widgets import StopButton
+from sugar3.graphics.objectchooser import ObjectChooser
 
 from toolbar_utils import button_factory, label_factory, separator_factory
 from utils import json_load, json_dump
@@ -33,8 +29,8 @@ import telepathy
 import dbus
 from dbus.service import signal
 from dbus.gobject_service import ExportedGObject
-from sugar.presence import presenceservice
-from sugar.presence.tubeconn import TubeConnection
+from sugar3.presence import presenceservice
+from sugar3.presence.tubeconn import TubeConnection
 
 from gettext import gettext as _
 
@@ -72,13 +68,13 @@ class DeductoActivity(activity.Activity):
 
         self._python_code = None
 
-        self._setup_toolbars(_have_toolbox)
+        self._setup_toolbars()
         self._setup_dispatch_table()
 
         # Create a canvas
-        canvas = gtk.DrawingArea()
-        canvas.set_size_request(gtk.gdk.screen_width(), \
-                                gtk.gdk.screen_height())
+        canvas = Gtk.DrawingArea()
+        canvas.set_size_request(Gdk.Screen.width(),
+                                Gdk.Screen.height())
         self.set_canvas(canvas)
         canvas.show()
         self.show_all()
@@ -96,40 +92,28 @@ class DeductoActivity(activity.Activity):
         else:
             self._game.new_game()
 
-    def _setup_toolbars(self, have_toolbox):
+    def _setup_toolbars(self):
         """ Setup the toolbars. """
 
         self.max_participants = 4
 
-        if have_toolbox:
-            toolbox = ToolbarBox()
+        toolbox = ToolbarBox()
 
-            # Activity toolbar
-            activity_button = ActivityToolbarButton(self)
+        # Activity toolbar
+        activity_button = ActivityToolbarButton(self)
 
-            toolbox.toolbar.insert(activity_button, 0)
-            activity_button.show()
+        toolbox.toolbar.insert(activity_button, 0)
+        activity_button.show()
 
-            self.set_toolbar_box(toolbox)
-            toolbox.show()
-            self.toolbar = toolbox.toolbar
-
-        else:
-            # Use pre-0.86 toolbar design
-            games_toolbar = gtk.Toolbar()
-            toolbox = activity.ActivityToolbox(self)
-            self.set_toolbox(toolbox)
-            toolbox.add_toolbar(_('Game'), games_toolbar)
-            toolbox.show()
-            toolbox.set_current_toolbar(1)
-            self.toolbar = games_toolbar
+        self.set_toolbar_box(toolbox)
+        toolbox.show()
+        self.toolbar = toolbox.toolbar
 
         self._new_game_button = button_factory(
             'new-game', self.toolbar, self._new_game_cb,
             tooltip=_('Start a new game.'))
 
-        if _have_toolbox:
-            separator_factory(toolbox.toolbar, False, True)
+        separator_factory(toolbox.toolbar, False, True)
 
         self._true_button = button_factory(
             'true', self.toolbar, self._true_cb,
@@ -139,28 +123,25 @@ class DeductoActivity(activity.Activity):
             'false', self.toolbar, self._false_cb,
             tooltip=_('The pattern does not match the rule.'))
 
-        if _have_toolbox:
-            separator_factory(toolbox.toolbar, False, True)
+        separator_factory(toolbox.toolbar, False, True)
 
         self._example_button = button_factory(
             'example', self.toolbar, self._example_cb,
             tooltip=_('Explore some examples.'))
 
-        self.status = label_factory(self.toolbar, '')
+        self.status = label_factory(self.toolbar, '', width=300)
 
-        if _have_toolbox:
-            separator_factory(toolbox.toolbar, True, False)
+        separator_factory(toolbox.toolbar, True, False)
 
         self._gear_button = button_factory(
             'view-source', self.toolbar,
             self._gear_cb,
             tooltip=_('Load a custom level.'))
 
-        if _have_toolbox:
-            stop_button = StopButton(self)
-            stop_button.props.accelerator = '<Ctrl>q'
-            toolbox.toolbar.insert(stop_button, -1)
-            stop_button.show()
+        stop_button = StopButton(self)
+        stop_button.props.accelerator = '<Ctrl>q'
+        toolbox.toolbar.insert(stop_button, -1)
+        stop_button.show()
 
     def _new_game_cb(self, button=None):
         ''' Start a new game. '''
@@ -199,7 +180,8 @@ class DeductoActivity(activity.Activity):
             if (not self._sharing) or self._initiating:
                 self.status.set_label(_('Click on new game button to begin.'))
             else:
-                self.status.set_label(_('Wait for sharer to start a new game.'))
+                self.status.set_label(_('Wait for sharer to start ' +
+                                        'a new game.'))
             return
         if self._playing:
             if self._game.this_pattern:
@@ -229,7 +211,8 @@ class DeductoActivity(activity.Activity):
             if (not self._sharing) or self._initiating:
                 self.status.set_label(_('Click on new game button to begin.'))
             else:
-                self.status.set_label(_('Wait for sharer to start a new game.'))
+                self.status.set_label(_('Wait for sharer to start ' +
+                                        'a new game.'))
             return
         if self._playing:
             if not self._game.this_pattern:
@@ -255,18 +238,18 @@ class DeductoActivity(activity.Activity):
     def _example_cb(self, button=None):
         ''' Show examples or resume play of current level. '''
         if self._playing:
-            self._example_button.set_icon('resume-play')
+            self._example_button.set_icon_name('resume-play')
             self._example_button.set_tooltip(_('Resume play'))
             self._true_button.set_tooltip(
                 _('Show a pattern that matches the rule.'))
             self._false_button.set_tooltip(
                 _('Show a pattern that does not match the rule.'))
             self.status.set_label(
-                _('Explore patterns with the %(1)s and %(2)s buttons.') % (
+                _('Explore patterns with the %s and %s buttons.') % (
                     '☑', '☒'))
             self._playing = False
         else:
-            self._example_button.set_icon('example')
+            self._example_button.set_icon_name('example')
             self._example_button.set_tooltip(_('Explore some examples.'))
             self._true_button.set_tooltip(
                 _('The pattern matches the rule.'))
@@ -281,14 +264,14 @@ class DeductoActivity(activity.Activity):
         self.status.set_text(
             _('Load a "True" pattern generator from the journal'))
         self._chooser('org.laptop.Pippy',
-                self._load_python_code_from_journal)
+                      self._load_python_code_from_journal)
         if self._python_code is None:
             return
         LEVELS_TRUE.append(self._python_code)
         self.status.set_text(
             _('Load a "False" pattern generator from the journal'))
         self._chooser('org.laptop.Pippy',
-                self._load_python_code_from_journal)
+                      self._load_python_code_from_journal)
         LEVELS_FALSE.append(self._python_code)
         if self._python_code is None:
             return
@@ -314,11 +297,11 @@ class DeductoActivity(activity.Activity):
         except TypeError:
             chooser = ObjectChooser(
                 None, self,
-                gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT)
+                Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
         if chooser is not None:
             try:
                 result = chooser.run()
-                if result == gtk.RESPONSE_ACCEPT:
+                if result == Gtk.ResponseType.ACCEPT:
                     dsobject = chooser.get_selected_object()
                     action(dsobject)
                     dsobject.destroy()
@@ -369,8 +352,6 @@ class DeductoActivity(activity.Activity):
 
         if sharer:
             _logger.debug('This is my activity: making a tube...')
-            id = self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].OfferDBusTube(
-                SERVICE, {})
         else:
             _logger.debug('I am joining an activity: waiting for a tube...')
             self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
@@ -393,15 +374,19 @@ params=%r state=%d' % (id, initiator, type, service, params, state))
 
         if (type == telepathy.TUBE_TYPE_DBUS and service == SERVICE):
             if state == telepathy.TUBE_STATE_LOCAL_PENDING:
-                self.tubes_chan[ \
-                              telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
+                self.tubes_chan[
+                    telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
 
             tube_conn = TubeConnection(self.conn,
-                self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES], id, \
-                group_iface=self.text_chan[telepathy.CHANNEL_INTERFACE_GROUP])
+                                       self.tubes_chan[telepathy.
+                                                       CHANNEL_TYPE_TUBES],
+                                       id,
+                                       group_iface=self.
+                                       text_chan[telepathy.
+                                                 CHANNEL_INTERFACE_GROUP])
 
-            self.chattube = ChatTube(tube_conn, self._initiating, \
-                self._event_received_cb)
+            self.chattube = ChatTube(tube_conn, self._initiating,
+                                     self._event_received_cb)
 
     def _setup_dispatch_table(self):
         ''' Associate tokens with commands. '''
@@ -409,8 +394,9 @@ params=%r state=%d' % (id, initiator, type, service, params, state))
             'n': [self._receive_new_game, 'new game'],
             'g': [self._receive_new_grid, 'get a new grid'],
             't': [self._receive_true_button_click, 'get a true button press'],
-            'f': [self._receive_false_button_click, 'get a false button press'],
-            }
+            'f': [self._receive_false_button_click, 'get a false ' +
+                                                    'button press'],
+        }
 
     def _event_received_cb(self, event_message):
         ''' Data from a tube has arrived. '''
@@ -424,7 +410,10 @@ params=%r state=%d' % (id, initiator, type, service, params, state))
         self._processing_methods[command][0](payload)
 
     def _send_new_game(self):
-        ''' Send a new game message to all players (only sharer sends grids) '''
+        '''
+        Send a new game message to all players
+        (only sharer sends grids)
+        '''
         self._send_event('n| ')
 
     def _receive_new_game(self, payload):
