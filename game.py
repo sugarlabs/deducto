@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-#Copyright (c) 2012 Walter Bender
-
+# Copyright (c) 2012 Walter Bender
+# Ported to Gtk3:
+# Ignacio Rodríguez <ignaciorodriguez@sugarlabs.org>
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
@@ -9,6 +10,24 @@
 # You should have received a copy of the GNU General Public License
 # along with this library; if not, write to the Free Software
 # Foundation, 51 Franklin Street, Suite 500 Boston, MA 02110-1335 USA
+
+from gi.repository import Gdk, GdkPixbuf, Gtk
+import cairo
+
+from random import uniform
+
+from sprites import Sprites, Sprite
+
+import traceback
+
+import logging
+_logger = logging.getLogger('reflection-activity')
+
+try:
+    from sugar3.graphics import style
+    GRID_CELL_SIZE = style.GRID_CELL_SIZE
+except ImportError:
+    GRID_CELL_SIZE = 0
 
 
 LEVELS_TRUE = ['def generate_pattern(self):\n\
@@ -138,7 +157,7 @@ LEVELS_TRUE = ['def generate_pattern(self):\n\
     dot_list[22] = 1 - parity\n\
     dot_list[23] = 1 - parity\n\
     return dot_list\n'
-]
+               ]
 LEVELS_FALSE = ['def generate_pattern(self):\n\
     # Level 1: Center dot is False\n\
     dot_list = []\n\
@@ -146,7 +165,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
         dot_list.append(int(uniform(0, 2)))\n\
     dot_list[12] = 0\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 2: Corners do not match\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -155,7 +174,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
     corner = [4, 20, 24]\n\
     dot_list[corner[n]] = 1 - dot_list[0]\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 3: less than 13 True\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -168,7 +187,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
     while dot_sum(dot_list) > 12:\n\
        dot_list[int(uniform(0, 25))] = 0\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 4: odd number of True\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -181,7 +200,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
     while dot_sum(dot_list) % 2 == 0:\n\
        dot_list[int(uniform(0, 25))] = 1\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 5: diagonal is True\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -205,7 +224,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
         diagonal = [4, 8, 12, 16, 20]\n\
         dot_list[diagonal[n]] = 1 - dot_list[0]\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 6: True to right of each False\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -216,7 +235,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
             if dot_list[j] == 0:\n\
                 dot_list[j + 1] = 1\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 7: One row with no True\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -225,7 +244,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
     for i in range(5):\n\
         dot_list[y * 5 + i] = 0\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 8: No True path to center\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -240,7 +259,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
             dot_list[paths[n][0]] = 0\n\
             dot_list[paths[n][1]] = 1\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 9: more True on bottom half than on top half\n\
     dot_list = []\n\
     for i in range(25):\n\
@@ -258,7 +277,7 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
     while (top_sum(dot_list) + 1) > bot_sum(dot_list):\n\
        dot_list[int(uniform(0, 10)) + 15] = 1\n\
     return dot_list\n',
-               'def generate_pattern(self):\n\
+                'def generate_pattern(self):\n\
     # Level 10: frowny face\n\
     dot_list = []\n\
     parity = int(uniform(0, 2))\n\
@@ -272,29 +291,6 @@ LEVELS_FALSE = ['def generate_pattern(self):\n\
     dot_list[20] = 1 - parity\n\
     dot_list[24] = 1 - parity\n\
     return dot_list\n']
-
-
-import gtk
-import cairo
-import gobject
-
-from math import sqrt
-from random import uniform
-
-import traceback
-
-from gettext import gettext as _
-
-import logging
-_logger = logging.getLogger('reflection-activity')
-
-try:
-    from sugar.graphics import style
-    GRID_CELL_SIZE = style.GRID_CELL_SIZE
-except ImportError:
-    GRID_CELL_SIZE = 0
-
-from sprites import Sprites, Sprite
 
 # Grid dimensions
 GRID = 5
@@ -314,11 +310,10 @@ class Game():
             parent.show_all()
             self._parent = parent
 
-        self._canvas.set_flags(gtk.CAN_FOCUS)
-        self._canvas.connect("expose-event", self._expose_cb)
+        self._canvas.connect("draw", self.__draw_cb)
 
-        self._width = gtk.gdk.screen_width()
-        self._height = gtk.gdk.screen_height() - (GRID_CELL_SIZE * 1.5)
+        self._width = Gdk.Screen.width()
+        self._height = Gdk.Screen.height() - (GRID_CELL_SIZE * 1.5)
         self._scale = self._width / (10 * DOT_SIZE * 1.2)
         self._dot_size = int(DOT_SIZE * self._scale)
         self._space = int(self._dot_size / 5.)
@@ -335,8 +330,8 @@ class Game():
         i = 0
         for y in range(GRID):
             for x in range(GRID):
-                xoffset = int((self._width - GRID * self._dot_size - \
-                                   (GRID - 1) * self._space) / 2.)
+                xoffset = int((self._width - GRID * self._dot_size -
+                               (GRID - 1) * self._space) / 2.)
                 if i < len(self._dots):
                     self._dots[i].move(
                         (xoffset + x * (self._dot_size + self._space),
@@ -345,7 +340,8 @@ class Game():
                     self._dots.append(
                         Sprite(self._sprites,
                                xoffset + x * (self._dot_size + self._space),
-                               y * (self._dot_size + self._space) + self._space,
+                               y * (self._dot_size + self._space) +
+                               self._space,
                                self._new_dot(self._colors[0])))
                 self._dots[i].type = 0
                 self._dots[-1].set_label_attributes(40)
@@ -425,41 +421,40 @@ class Game():
         traceback.print_exc()
         return None
 
-    def _expose_cb(self, win, event):
-        self.do_expose_event(event)
+    def __draw_cb(self, canvas, cr):
+        self._sprites.redraw_sprites(cr=cr)
 
     def do_expose_event(self, event):
         ''' Handle the expose-event by drawing '''
         # Restrict Cairo to the exposed area
         cr = self._canvas.window.cairo_create()
         cr.rectangle(event.area.x, event.area.y,
-                event.area.width, event.area.height)
+                     event.area.width, event.area.height)
         cr.clip()
         # Refresh sprite list
         self._sprites.redraw_sprites(cr=cr)
 
     def _destroy_cb(self, win, event):
-        gtk.main_quit()
+        Gtk.main_quit()
 
     def _new_dot(self, color):
         ''' generate a dot of a color color '''
         self._dot_cache = {}
-        if not color in self._dot_cache:
+        if color not in self._dot_cache:
             self._stroke = color
             self._fill = color
             self._svg_width = self._dot_size
             self._svg_height = self._dot_size
             pixbuf = svg_str_to_pixbuf(
-                self._header() + \
+                self._header() +
                 self._circle(self._dot_size / 2., self._dot_size / 2.,
-                             self._dot_size / 2.) + \
+                             self._dot_size / 2.) +
                 self._footer())
 
             surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
                                          self._svg_width, self._svg_height)
             context = cairo.Context(surface)
-            context = gtk.gdk.CairoContext(context)
-            context.set_source_pixbuf(pixbuf, 0, 0)
+            Gdk.cairo_set_source_pixbuf(context, pixbuf, 0, 0)
             context.rectangle(0, 0, self._svg_width, self._svg_height)
             context.fill()
             self._dot_cache[color] = surface
@@ -484,7 +479,7 @@ class Game():
 
 def svg_str_to_pixbuf(svg_string):
     """ Load pixbuf from SVG string """
-    pl = gtk.gdk.PixbufLoader('svg')
+    pl = GdkPixbuf.PixbufLoader.new_with_type('svg')
     pl.write(svg_string)
     pl.close()
     pixbuf = pl.get_pixbuf()
