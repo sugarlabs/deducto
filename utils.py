@@ -22,7 +22,7 @@ except (ImportError, AttributeError):
         import simplejson as json
         from simplejson import load as jload
         from simplejson import dump as jdump
-    except:
+    except BaseException:
         OLD_SUGAR_SYSTEM = True
 
 
