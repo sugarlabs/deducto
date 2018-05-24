@@ -16,7 +16,8 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('TelepathyGLib', '0.12')
 
-from gi.repository import Gtk, Gdk
+from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import TelepathyGLib
 
 from sugar3.activity import activity
@@ -55,7 +56,7 @@ class DeductoActivity(activity.Activity):
         """ Initialize the toolbars and the game board """
         try:
             super(DeductoActivity, self).__init__(handle)
-        except dbus.exceptions.DBusException, e:
+        except dbus.exceptions.DBusException as e:
             _logger.error(str(e))
 
         self.nick = profile.get_nick_name()

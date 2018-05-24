@@ -404,19 +404,19 @@ class Game():
         try:
             exec f in globals(), userdefined
             return userdefined['generate_pattern'](self)
-        except ZeroDivisionError, e:
+        except ZeroDivisionError as e:
             self._set_label('Python zero-divide error: %s' % (str(e)))
-        except ValueError, e:
+        except ValueError as e:
             self._set_label('Python value error: %s' % (str(e)))
-        except SyntaxError, e:
+        except SyntaxError as e:
             self._set_label('Python syntax error: %s' % (str(e)))
-        except NameError, e:
+        except NameError as e:
             self._set_label('Python name error: %s' % (str(e)))
-        except OverflowError, e:
+        except OverflowError as e:
             self._set_label('Python overflow error: %s' % (str(e)))
-        except TypeError, e:
+        except TypeError as e:
             self._set_label('Python type error: %s' % (str(e)))
-        except:
+        except BaseException:
             self._set_label('Python error')
         traceback.print_exc()
         return None

@@ -77,7 +77,7 @@ def svg_str_to_pixbuf(svg_string):
 '''
 
 import gi
-gi.require_version('PangoCairo','1.0')
+gi.require_version('PangoCairo', '1.0')
 
 from gi.repository import GdkPixbuf, Gdk
 from gi.repository import Pango, PangoCairo
@@ -252,7 +252,7 @@ class Sprite:
     def set_label(self, new_label, i=0):
         ''' Set the label drawn on the sprite '''
         self._extend_labels_array(i)
-        if type(new_label) is str or type(new_label) is unicode:
+        if isinstance(new_label, str) or isinstance(new_label, unicode):
             # pango doesn't like nulls
             self.labels[i] = new_label.replace("\0", " ")
         else:
@@ -342,7 +342,7 @@ class Sprite:
                              self.rect[2],
                              self.rect[3])
                 cr.fill()
-            elif type(img) == cairo.ImageSurface:
+            elif isinstance(img, cairo.ImageSurface):
                 cr.set_source_surface(img, self.rect[0] + self._dx[i],
                                       self.rect[1] + self._dy[i])
                 cr.rectangle(self.rect[0] + self._dx[i],
