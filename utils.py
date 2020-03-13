@@ -10,44 +10,16 @@
 # Foundation, 51 Franklin Street, Suite 500 Boston, MA 02110-1335 USA
 
 
-from StringIO import StringIO
-try:
-    OLD_SUGAR_SYSTEM = False
-    import json
-    json.dumps
-    from json import load as jload
-    from json import dump as jdump
-except (ImportError, AttributeError):
-    try:
-        import simplejson as json
-        from simplejson import load as jload
-        from simplejson import dump as jdump
-    except BaseException:
-        OLD_SUGAR_SYSTEM = True
+from io import StringIO
+import json
 
 
 def json_load(text):
-    """ Load JSON data using what ever resources are available. """
-    if OLD_SUGAR_SYSTEM is True:
-        listdata = json.read(text)
-    else:
-        # strip out leading and trailing whitespace, nulls, and newlines
-        io = StringIO(text)
-        try:
-            listdata = jload(io)
-        except ValueError:
-            # assume that text is ascii list
-            listdata = text.split()
-            for i, value in enumerate(listdata):
-                listdata[i] = int(value)
+    """ Load JSON data. """
+    listdata = json.read(text)
     return listdata
 
 
 def json_dump(data):
-    """ Save data using available JSON tools. """
-    if OLD_SUGAR_SYSTEM is True:
-        return json.write(data)
-    else:
-        _io = StringIO()
-        jdump(data, _io)
-        return _io.getvalue()
+    """ Save data. """
+    return json.write(data) 

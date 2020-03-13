@@ -32,7 +32,7 @@ from utils import json_load, json_dump
 
 import dbus
 from dbus.service import signal
-from dbus.gobject_service import ExportedGObject
+from dbus.gi_service import ExportedGObject
 from sugar3.presence import presenceservice
 from sugar3.presence.tubeconn import TubeConnection
 
@@ -384,7 +384,7 @@ params=%r state=%d' % (id, initiator, type, service, params, state))
             tube_conn = TubeConnection(self.conn,
                                        self.tubes_chan[TelepathyGLib.IFACE_CHANNEL_TYPE_TUBES],
                                        id,
-                                       group_iface=self. text_chan[TelepathyGLib. IFACE_CHANNEL_INTERFACE_GROUP])
+                                       group_iface=self. text_chan[TelepathyGLib.IFACE_CHANNEL_INTERFACE_GROUP])
 
             self.chattube = ChatTube(tube_conn, self._initiating,
                                      self._event_received_cb)
