@@ -392,7 +392,7 @@ class Game():
 
     def _dot_to_grid(self, dot):
         ''' calculate the grid column and row for a dot '''
-        return [dot % GRID, int(dot / GRID)]
+        return [dot % GRID, int(dot // GRID)]
 
     def _set_label(self, string):
         ''' Set the label in the toolbar or the window frame. '''
@@ -402,7 +402,7 @@ class Game():
         ''' Run Python code passed as argument '''
         userdefined = {}
         try:
-            exec f in globals(), userdefined
+            exec(f, globals(), userdefined)
             return userdefined['generate_pattern'](self)
         except ZeroDivisionError as e:
             self._set_label('Python zero-divide error: %s' % (str(e)))
@@ -480,7 +480,7 @@ class Game():
 def svg_str_to_pixbuf(svg_string):
     """ Load pixbuf from SVG string """
     pl = GdkPixbuf.PixbufLoader.new_with_type('svg')
-    pl.write(svg_string)
+    pl.write(svg_string.encode('utf-8'))
     pl.close()
     pixbuf = pl.get_pixbuf()
     return pixbuf
