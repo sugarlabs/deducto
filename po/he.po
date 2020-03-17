@@ -2,113 +2,115 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2018-02-11 14:13+0000\n"
+"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1518358403.000000\n"
 
 #: activity/activity.info:2
 msgid "Deducto"
-msgstr ""
+msgstr "גשש בלש"
 
 #: DeductoActivity.py:94
 #, python-format
 msgid "Resuming level %d"
-msgstr ""
+msgstr "המשך שלב %d"
 
 #: DeductoActivity.py:122
 msgid "Game"
-msgstr ""
+msgstr "משחק"
 
 #: DeductoActivity.py:129
 msgid "Start a new game."
-msgstr ""
+msgstr "התחלת משחק חדש."
 
 #: DeductoActivity.py:136 DeductoActivity.py:272
 msgid "The pattern matches the rule."
-msgstr ""
+msgstr "התבנית תואמת את הכלל."
 
 #: DeductoActivity.py:140 DeductoActivity.py:274
 msgid "The pattern does not match the rule."
-msgstr ""
+msgstr "התבנית אינה תואמת את הכלל."
 
 #: DeductoActivity.py:147 DeductoActivity.py:270
 msgid "Explore some examples."
-msgstr ""
+msgstr "עיון במגוון דוגמאות."
 
 #: DeductoActivity.py:157
 msgid "Load a custom level."
-msgstr ""
+msgstr "טעינת שלב בהתאמה אישית."
 
 #: DeductoActivity.py:178 DeductoActivity.py:189 DeductoActivity.py:275
 #: DeductoActivity.py:437
 #, python-format
 msgid "Playing level %d"
-msgstr ""
+msgstr "משחק ברמה %d"
 
 #: DeductoActivity.py:180
 msgid "Only sharer can start a new game."
-msgstr ""
+msgstr "רק משתף יכול להתחיל במשחק חדש."
 
 #: DeductoActivity.py:187
 msgid "Game over."
-msgstr ""
+msgstr "המשחק תסתיים."
 
 #: DeductoActivity.py:200 DeductoActivity.py:230
 msgid "Click on new game button to begin."
-msgstr ""
+msgstr "יש ללחוץ על הכפתור משחק חדש כדי להתחיל."
 
 #: DeductoActivity.py:202 DeductoActivity.py:232
 msgid "Wait for sharer to start a new game."
-msgstr ""
+msgstr "יש להמתין למשתף כדי להתחיל משחק חדש."
 
 #: DeductoActivity.py:213 DeductoActivity.py:242
 #, python-format
 msgid "%d correct answers."
-msgstr ""
+msgstr "%d תשובות נכונות."
 
 #: DeductoActivity.py:219
 msgid "Pattern was false."
-msgstr ""
+msgstr "התבנית הייתה שגויה."
 
 #: DeductoActivity.py:248
 msgid "Pattern was true."
-msgstr ""
+msgstr "התבנית הייתה נכונה."
 
 #: DeductoActivity.py:259
 msgid "Resume play"
-msgstr ""
+msgstr "להמשיך במשחק"
 
 #: DeductoActivity.py:261
 msgid "Show a pattern that matches the rule."
-msgstr ""
+msgstr "הצגת תבנית שתואמת לכלל."
 
 #: DeductoActivity.py:263
 msgid "Show a pattern that does not match the rule."
-msgstr ""
+msgstr "הצגת תבנית שאינה תואמת לכלל."
 
 #: DeductoActivity.py:265
 #, python-format
 msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr ""
+msgstr "ניתן לחקור תבניות עם הכפתורים %(1)s ו־%(2)s."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
-msgstr ""
+msgstr "טעינת מחולל תבניות „נכונות” מהיומן"
 
 #: DeductoActivity.py:289
 msgid "Load a \"False\" pattern generator from the journal"
-msgstr ""
+msgstr "טעינת מחולל תבניות „שגויות” מהיומן"
 
 #: DeductoActivity.py:295
 msgid "New level added"
-msgstr ""
+msgstr "נוסף שלב חדש"
