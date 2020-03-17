@@ -1,5 +1,15 @@
 NEWS
 
+11
+* L10n refresh (Chris Leonard et al)
+* Use markdown for readme (Emily Ong)
+* Ported to gtk3 + pep8 fixes (Ignacio Rodriguez)
+* Fix PyGI warnings (Rahul Bothra)
+* Port Telepathy Static Binding to TelepathyGLib (Rahul Bothra)
+* Port to Python 3 (Ibiam Chihurumnaya)
+* translate.sugarlabs.org synchronisation (Ibiam Chihurumnaya)
+* Regenerate POT file (Ibiam Chihurumnaya)
+
 10
 
 * New translations
