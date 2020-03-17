@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-19 00:33-0400\n"
-"PO-Revision-Date: 2016-08-02 18:15+0000\n"
-"Last-Translator: betoraposa <humberto.celiasilva@gmail.com>\n"
+"PO-Revision-Date: 2018-09-10 19:20+0000\n"
+"Last-Translator: Paulo Francisco <slomp@ufrgs.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1470161708.000000\n"
+"X-POOTLE-MTIME: 1536607239.000000\n"
 
 #: activity/activity.info:2
 msgid "Deducto"
@@ -59,19 +59,19 @@ msgstr "Jogando nível %d"
 
 #: DeductoActivity.py:180
 msgid "Only sharer can start a new game."
-msgstr "Apenas o provedor pode começar um novo jogo."
+msgstr "Apenas quem compartilhou a atividade pode começar um novo jogo."
 
 #: DeductoActivity.py:187
 msgid "Game over."
-msgstr "Fim de jogo."
+msgstr "Fim do jogo."
 
 #: DeductoActivity.py:200 DeductoActivity.py:230
 msgid "Click on new game button to begin."
-msgstr "Clique no botão de novo jogo para começar."
+msgstr "Clique no botão Novo Jogo para começar."
 
 #: DeductoActivity.py:202 DeductoActivity.py:232
 msgid "Wait for sharer to start a new game."
-msgstr "Aguarde provedor para começar um novo jogo."
+msgstr "Aguarde quem compartilhou a atividade para começar um novo jogo."
 
 #: DeductoActivity.py:213 DeductoActivity.py:242
 #, python-format
@@ -80,11 +80,11 @@ msgstr "%d respostas corretas."
 
 #: DeductoActivity.py:219
 msgid "Pattern was false."
-msgstr "Padrão foi falso."
+msgstr "Padrão era falso."
 
 #: DeductoActivity.py:248
 msgid "Pattern was true."
-msgstr "Padrão foi verdadeiro."
+msgstr "O padrão era verdadeiro."
 
 #: DeductoActivity.py:259
 msgid "Resume play"
@@ -96,21 +96,21 @@ msgstr "Exiba um padrão que combine com a regra."
 
 #: DeductoActivity.py:263
 msgid "Show a pattern that does not match the rule."
-msgstr "Exiba um padrão que não combine com a regra."
+msgstr "Mostrar um padrão que não combine com a regra."
 
 #: DeductoActivity.py:265
 #, python-format
 msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Explore os padrões com as teclas %(1)s e %(2)s."
+msgstr "Explorar padrões com os botões %(1)s e %(2)s."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
-msgstr "Carregue um gerador de padrões \"Verdadeiro\" do diário"
+msgstr "Carregar um gerador de padrões \"Verdadeiro\" do Diário"
 
 #: DeductoActivity.py:289
 msgid "Load a \"False\" pattern generator from the journal"
-msgstr "Carregue um gerador de padrões \"Falso\" do diário"
+msgstr "Carregar um gerador de padrões \"Falso\" do Diário"
 
 #: DeductoActivity.py:295
 msgid "New level added"
-msgstr "Nível novo adicionado"
+msgstr "Novo nível adicionado"
