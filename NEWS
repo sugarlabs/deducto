@@ -1,5 +1,8 @@
 NEWS
 
+12
+* Fix typo preventing game from launching (Walter)
+
 11
 * L10n refresh (Chris Leonard et al)
 * Use markdown for readme (Emily Ong)

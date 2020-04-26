@@ -48,8 +48,6 @@ SERVICE = 'in.seeta.Deducto'
 IFACE = SERVICE
 PATH = '/in/seeta/DeductoActivity'
 
-BUTTON1 = '☑'
-BUTTON2 = '☒'
 
 
 class DeductoActivity(activity.Activity):
@@ -251,8 +249,10 @@ class DeductoActivity(activity.Activity):
                 _('Show a pattern that matches the rule.'))
             self._false_button.set_tooltip(
                 _('Show a pattern that does not match the rule.'))
-            self.status.set_label(
-                _(f'Explore patterns with the {BUTTON1} and {BUTTON2} buttons.')
+            Button1 = '☑'
+            Button2 = '☒'
+            text = f"Explore patterns with the {Button1} and {Button2} buttons."
+            self.status.set_label(_(text))
             self._playing = False
         else:
             self._example_button.set_icon_name('example')
