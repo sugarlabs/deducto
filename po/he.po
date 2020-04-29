@@ -100,8 +100,8 @@ msgstr "הצגת תבנית שאינה תואמת לכלל."
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "ניתן לחקור תבניות עם הכפתורים %(1)s ו־%(2)s."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "אתה יכול לחקור תבניות עם {} ו {} כפתורים."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

@@ -99,8 +99,8 @@ msgstr "Montrer un motif qui ne correspond pas à la règle."
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Explorer des motifs avec les boutons %(1)s et %(2)s."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "Explorer des motifs avec les boutons {} et {}."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

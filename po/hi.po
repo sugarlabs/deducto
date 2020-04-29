@@ -101,8 +101,8 @@ msgstr "एक पैटर्न दिखाएं जो नियम से 
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "% (1) s और% (2) बटन के साथ पैटर्न का अन्वेषण करें।"
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "{} और {} बटन के साथ पैटर्न का अन्वेषण करें।"
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

@@ -99,8 +99,8 @@ msgstr "Εμφάνιση μοτίβου που δεν ταιριάζει με τ
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Εξερεύνηση μοτίβων με τα πλήκτρα %(1)s και %(2)s"
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "Εξερεύνηση μοτίβων με τα πλήκτρα {} και {}"
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

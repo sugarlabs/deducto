@@ -100,7 +100,7 @@ msgstr ""
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
+msgid "Explore patterns with the {} and {} buttons."
 msgstr ""
 
 #: DeductoActivity.py:282

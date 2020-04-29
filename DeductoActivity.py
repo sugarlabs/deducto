@@ -251,8 +251,7 @@ class DeductoActivity(activity.Activity):
                 _('Show a pattern that does not match the rule.'))
             Button1 = '☑'
             Button2 = '☒'
-            text = f"Explore patterns with the {Button1} and {Button2} buttons."
-            self.status.set_label(_(text))
+            self.status.set_label(_("Explore patterns with the {} and {} buttons.".format(Button1, Button2)))
             self._playing = False
         else:
             self._example_button.set_icon_name('example')

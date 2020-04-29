@@ -100,8 +100,8 @@ msgstr "Mostrar um padrão que não combine com a regra."
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Explorar padrões com os botões %(1)s e %(2)s."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "Explorar padrões com os botões {} e {}."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

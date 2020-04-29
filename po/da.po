@@ -101,8 +101,8 @@ msgstr "Vis et mønster som ikke passer til reglen."
 #: DeductoActivity.py:265
 #, python-format
 #, python-format,
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Udforsk mønstre med %(1)s og %(2)s knapper."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "Udforsk mønstre med {} og {} knapper."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

@@ -100,8 +100,8 @@ msgstr "Nyut kite ma pe rwate ki gin aluba."
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Yeny yore mapapat ki mapeca %(1)s kede %(2)s."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "Yeny yore mapapat ki mapeca {} kede {}."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"
