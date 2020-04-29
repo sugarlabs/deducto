@@ -100,8 +100,8 @@ msgstr "Show a pattern that does not match the rule."
 #: DeductoActivity.py:265
 #, python-format
 #, python-format,
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Explore patterns with the %(1)s and %(2)s buttons."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "Explore patterns with the {} and {} buttons."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

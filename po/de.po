@@ -100,8 +100,8 @@ msgstr "Zeige auf ein Muster welches nicht den Regeln entspricht."
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "Entdecke neue Muster mit Knopf %(1)s und %(2)s."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "Entdecke neue Muster mit Knopf {} und {}."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

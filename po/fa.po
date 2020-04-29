@@ -100,8 +100,8 @@ msgstr "الگویی که منطبق با قانون نیست را نشان ده
 
 #: DeductoActivity.py:265
 #, python-format
-msgid "Explore patterns with the %(1)s and %(2)s buttons."
-msgstr "شناسایی الگوها با دکمه های %(1)s و %(2)s."
+msgid "Explore patterns with the {} and {} buttons."
+msgstr "شناسایی الگوها با دکمه های {} و {}."
 
 #: DeductoActivity.py:282
 msgid "Load a \"True\" pattern generator from the journal"

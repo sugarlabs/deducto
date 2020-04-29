@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-17 23:54+0100\n"
+"POT-Creation-Date: 2020-04-29 16:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,91 +21,90 @@ msgstr ""
 msgid "Deducto"
 msgstr ""
 
-#: DeductoActivity.py:97
+#: DeductoActivity.py:95
 #, python-format
 msgid "Resuming level %d"
 msgstr ""
 
-#: DeductoActivity.py:121
+#: DeductoActivity.py:119
 msgid "Start a new game."
 msgstr ""
 
-#: DeductoActivity.py:127 DeductoActivity.py:261
+#: DeductoActivity.py:125 DeductoActivity.py:260
 msgid "The pattern matches the rule."
 msgstr ""
 
-#: DeductoActivity.py:131 DeductoActivity.py:263
+#: DeductoActivity.py:129 DeductoActivity.py:262
 msgid "The pattern does not match the rule."
 msgstr ""
 
-#: DeductoActivity.py:137 DeductoActivity.py:259
+#: DeductoActivity.py:135 DeductoActivity.py:258
 msgid "Explore some examples."
 msgstr ""
 
-#: DeductoActivity.py:146
+#: DeductoActivity.py:144
 msgid "Load a custom level."
 msgstr ""
 
-#: DeductoActivity.py:166 DeductoActivity.py:177 DeductoActivity.py:264
-#: DeductoActivity.py:429
+#: DeductoActivity.py:164 DeductoActivity.py:175 DeductoActivity.py:263
+#: DeductoActivity.py:428
 #, python-format
 msgid "Playing level %d"
 msgstr ""
 
-#: DeductoActivity.py:168
+#: DeductoActivity.py:166
 msgid "Only sharer can start a new game."
 msgstr ""
 
-#: DeductoActivity.py:175
+#: DeductoActivity.py:173
 msgid "Game over."
 msgstr ""
 
-#: DeductoActivity.py:188 DeductoActivity.py:219
+#: DeductoActivity.py:186 DeductoActivity.py:217
 msgid "Click on new game button to begin."
 msgstr ""
 
-#: DeductoActivity.py:190 DeductoActivity.py:221
+#: DeductoActivity.py:188 DeductoActivity.py:219
 msgid "Wait for sharer to start a new game."
 msgstr ""
 
-#: DeductoActivity.py:202 DeductoActivity.py:232
+#: DeductoActivity.py:200 DeductoActivity.py:230
 #, python-format
 msgid "%d correct answers."
 msgstr ""
 
-#: DeductoActivity.py:208
+#: DeductoActivity.py:206
 msgid "Pattern was false."
 msgstr ""
 
-#: DeductoActivity.py:238
+#: DeductoActivity.py:236
 msgid "Pattern was true."
 msgstr ""
 
-#: DeductoActivity.py:249
+#: DeductoActivity.py:247
 msgid "Resume play"
 msgstr ""
 
-#: DeductoActivity.py:251
+#: DeductoActivity.py:249
 msgid "Show a pattern that matches the rule."
 msgstr ""
 
-#: DeductoActivity.py:253
+#: DeductoActivity.py:251
 msgid "Show a pattern that does not match the rule."
 msgstr ""
 
-#: DeductoActivity.py:255
-#, python-brace-format
-msgid "Explore patterns with the {BUTTON1} and {BUTTON2} buttons."
+#: DeductoActivity.py:254
+msgid "Explore patterns with the {} and {} buttons."
 msgstr ""
 
-#: DeductoActivity.py:271
+#: DeductoActivity.py:270
 msgid "Load a \"True\" pattern generator from the journal"
 msgstr ""
 
-#: DeductoActivity.py:278
+#: DeductoActivity.py:277
 msgid "Load a \"False\" pattern generator from the journal"
 msgstr ""
 
-#: DeductoActivity.py:284
+#: DeductoActivity.py:283
 msgid "New level added"
 msgstr ""
