@@ -368,23 +368,24 @@ class Game():
             self.show_false()
 
     def _initiating(self):
-        return self._activity.initiating
+        return self._activity._collab.props.leader
 
     def new_game(self):
         ''' Start a new game. '''
         self.show_random()
 
-    def restore_grid(self, dot_list, boolean):
+    def restore_grid(self, dot_list, boolean, color):
         ''' Restore a grid from the share '''
         self.show(dot_list)
         self.this_pattern = boolean
+        self._colors = color
 
     def save_grid(self):
         ''' Return dot list for sharing '''
         dot_list = []
         for dot in self._dots:
             dot_list.append(dot.type)
-        return(dot_list, self.this_pattern)
+        return dot_list, self.this_pattern, self._colors
 
     def _grid_to_dot(self, pos):
         ''' calculate the dot index from a column and row in the grid '''
