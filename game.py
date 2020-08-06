@@ -433,7 +433,8 @@ class Game():
                      event.area.width, event.area.height)
         cr.clip()
         # Refresh sprite list
-        self._sprites.redraw_sprites(cr=cr)
+        if cr is not None:
+            self._sprites.redraw_sprites(cr=cr)
 
     def _destroy_cb(self, win, event):
         Gtk.main_quit()
