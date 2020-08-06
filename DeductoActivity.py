@@ -140,20 +140,17 @@ class DeductoActivity(activity.Activity):
 
     def _new_game_cb(self, button=None):
         ''' Start a new game. '''
-        if (not self._sharing) or self._initiating:
-            self._game_over = False
-            self._correct = 0
-            self.level = 0
-            if not self._playing:
-                self._example_cb()
-            self._game.new_game()
-            if self._initiating:
-                _logger.debug('sending new game and new grid')
-                self._send_new_game()
-                self._send_new_grid()
-            self.status.set_label(_('Playing level %d') % (self.level + 1))
-        else:
-            self.status.set_label(_('Only sharer can start a new game.'))
+        self._game_over = False
+        self._correct = 0
+        self.level = 0
+        if not self._playing:
+            self._example_cb()
+        self._game.new_game()
+        if self._initiating:
+            _logger.debug('sending new game and new grid')
+            self._send_new_game()
+            self._send_new_grid()
+        self.status.set_label(_('Playing level %d') % (self.level + 1))
 
     def _test_for_game_over(self):
         ''' If we are at maximum levels, the game is over '''
@@ -348,7 +345,6 @@ class DeductoActivity(activity.Activity):
     def _send_new_game(self):
         '''
         Send a new game message to all players
-        (only sharer sends grids)
         '''
         self._send_event('new_game', ' ')
 
@@ -362,7 +358,7 @@ class DeductoActivity(activity.Activity):
         self.status.set_label(_('Playing level %d') % (self.level + 1))
 
     def _send_new_grid(self):
-        ''' Send a new grid to all players (only sharer sends grids) '''
+        ''' Send a new grid to all players '''
         self._send_event('new_grid', self._game.save_grid())
 
     def _receive_new_grid(self, payload):
