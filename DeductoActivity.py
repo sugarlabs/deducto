@@ -43,7 +43,7 @@ class DeductoActivity(activity.Activity):
     def __init__(self, handle):
         """ Initialize the toolbars and the game board """
 
-        super().__init__(handle)
+        activity.Activity.__init__(self, handle)
 
         self.nick = profile.get_nick_name()
         if profile.get_color() is not None:
