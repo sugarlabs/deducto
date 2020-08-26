@@ -74,7 +74,7 @@ class DeductoActivity(activity.Activity):
         self._sharing = False
         self._initiating = False
         self.connect('shared', self._shared_cb)
-        self.connect('joined', self._joined_cb)
+
         self._collab = CollabWrapper(self)
         self._collab.connect('message', self._message_cb)
         self._collab.connect('joined', self._joined_cb)
