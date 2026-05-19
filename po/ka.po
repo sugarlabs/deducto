@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-29 16:43+0100\n"
-"PO-Revision-Date: 2026-04-01 08:11+0000\n"
+"PO-Revision-Date: 2026-05-19 11:33+0000\n"
 "Last-Translator: NF <rkavt@smartprojects.ge>\n"
 "Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
 "sugar-activities/deducto/ka/>\n"
@@ -34,29 +34,29 @@ msgstr "ახალი თამაშის დაწყება."
 
 #: DeductoActivity.py:125 DeductoActivity.py:260
 msgid "The pattern matches the rule."
-msgstr ""
+msgstr "ნიმუში წესს ემთხვევა."
 
 #: DeductoActivity.py:129 DeductoActivity.py:262
 msgid "The pattern does not match the rule."
-msgstr ""
+msgstr "ნიმუში წესს არ ემთხვევა."
 
 #: DeductoActivity.py:135 DeductoActivity.py:258
 msgid "Explore some examples."
-msgstr ""
+msgstr "დაათვალიერეთ მაგალითები."
 
 #: DeductoActivity.py:144
 msgid "Load a custom level."
-msgstr ""
+msgstr "მორგებული დონის ჩატვირთვა."
 
 #: DeductoActivity.py:164 DeductoActivity.py:175 DeductoActivity.py:263
 #: DeductoActivity.py:428
 #, python-format
 msgid "Playing level %d"
-msgstr ""
+msgstr "თამაშობთ დონეს %d"
 
 #: DeductoActivity.py:166
 msgid "Only sharer can start a new game."
-msgstr ""
+msgstr "ახალი თამაშის დაწყება, მხოლოდ, გამზიარებელს შეუძლია."
 
 #: DeductoActivity.py:173
 msgid "Game over."
@@ -64,24 +64,24 @@ msgstr "თამაში დასრულდა."
 
 #: DeductoActivity.py:186 DeductoActivity.py:217
 msgid "Click on new game button to begin."
-msgstr ""
+msgstr "დასაწყებად დააწკაპუნეთ ახალი თამაშის ღილაკზე."
 
 #: DeductoActivity.py:188 DeductoActivity.py:219
 msgid "Wait for sharer to start a new game."
-msgstr ""
+msgstr "ახალი თამაშის დასაწყებად დაელოდეთ გამზიარებელს."
 
 #: DeductoActivity.py:200 DeductoActivity.py:230
 #, python-format
 msgid "%d correct answers."
-msgstr ""
+msgstr "%d სწორი პასუხი."
 
 #: DeductoActivity.py:206
 msgid "Pattern was false."
-msgstr ""
+msgstr "ნიმუში ცრუა."
 
 #: DeductoActivity.py:236
 msgid "Pattern was true."
-msgstr ""
+msgstr "ნიმუში ჭეშმარიტია."
 
 #: DeductoActivity.py:247
 msgid "Resume play"
@@ -89,27 +89,27 @@ msgstr "თამაშის გაგრძელება"
 
 #: DeductoActivity.py:249
 msgid "Show a pattern that matches the rule."
-msgstr ""
+msgstr "ჩვენება ნიმუშის, რომელიც წესს ემთხვევა."
 
 #: DeductoActivity.py:251
 msgid "Show a pattern that does not match the rule."
-msgstr ""
+msgstr "აჩვენებს ნიმუშს, რომელიც წესს არ ემთხვევა."
 
 #: DeductoActivity.py:254
 msgid "Explore patterns with the {} and {} buttons."
-msgstr ""
+msgstr "ნიმუშების დათვალიერება ღილაკებით {} და {}."
 
 #: DeductoActivity.py:270
 msgid "Load a \"True\" pattern generator from the journal"
-msgstr ""
+msgstr "\"ჭეშმარიტი\" ნიმუშის გენერატორის ჩატვირთვა ჟურნალიდან"
 
 #: DeductoActivity.py:277
 msgid "Load a \"False\" pattern generator from the journal"
-msgstr ""
+msgstr "\"ცრუ\" ნიმუშის გენერატორის ჩატვირთვა ჟურნალიდან"
 
 #: DeductoActivity.py:283
 msgid "New level added"
-msgstr ""
+msgstr "დაემატა ახალი დონე"
 
 #: DeductoActivity.py:122
 msgid "Game"
